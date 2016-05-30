@@ -2,35 +2,58 @@
 <html lang="en" class="no-js">
 	<head>
 		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<title>Pinoy Hoops - Index</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>Pinoy Hoops</title>
 
 		<link rel="stylesheet" type="text/css" href="css/menu.css" />
 		<link rel="stylesheet" type="text/css" href="css/styles.css" />
+
 		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-		
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 		<script type="text/javascript" src="js/googlemap.js"></script>
 
-		
 	</head>
 
 	<body>
-	
-		<div class="landingpage">
-				<div class="bg-gallery">
-					<img src="images/hero01.jpg">	
-				</div>
-				<div class="logo">
-					<a href="index.html"><img src="images/logo_light.png"></a>
-					<p>The home of all things basketball</p>
-					<div class="arrow">
-						<a href="map.html"><img src="images/arrow.png"></a>
-					</div>
+
+			<section class="landingpage">
+				<div id="slideshow">
+				   <div>
+				     <img src="images/landingpage/hero01.jpg">
+				   </div>
+				   <div>
+				     <img src="images/landingpage/hero02.jpg">
+				   </div>
+					 <div>
+				     <img src="images/landingpage/hero03.jpg">
+				   </div>
 				</div>
 
-			</div>
+				<div class="logo">
+					<a href="index.html"><img src="images/logo_light.png" class="img-responsive"></a>
+				</div>
+
+				<div class="nav-arrow">
+						<a href="map.html"><img src="images/landingpage/arrow.png"></a>
+				</div>
+			</section>
+
+
+		<script>
+			$("#slideshow > div:gt(0)").hide();
+
+			setInterval(function() {
+			$('#slideshow > div:first')
+				.fadeOut(1000)
+				.next()
+				.fadeIn(1000)
+				.end()
+				.appendTo('#slideshow');
+			},  5000);
+		</script>
 	</body>
 </html>
